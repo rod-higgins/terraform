@@ -8,7 +8,6 @@ locals {
 }
 
 module "terraform-aws-rds-source" {
-  #source = "git@github.com:terraform-aws-modules/terraform-aws-rds.git?ref=v3.0.0"
   
   source  = "terraform-aws-modules/rds/aws"
   version = "3.0.0"
@@ -16,7 +15,7 @@ module "terraform-aws-rds-source" {
   identifier = "mysql-group-source"
 
   engine         = "mysql"
-  engine_version = "5.7"
+  engine_version = "8.0"
   instance_class = "db.m4.medium"
 
   allocated_storage     = 50
@@ -27,7 +26,7 @@ module "terraform-aws-rds-source" {
   password = "redhat22"
   port     = 3306
 
-  parameter_group_name      = "default.mysql5.7"
+  parameter_group_name      = "default.mysql8.0"
   create_db_parameter_group = false
   create_db_option_group    = false
 

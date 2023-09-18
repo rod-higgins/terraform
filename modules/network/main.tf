@@ -19,7 +19,6 @@ module "vpc" {
 }
 
 module "security_group_asg" {
-  #source = "git@github.com:terraform-aws-modules/terraform-aws-security-group.git?ref=v4.0.0"
 
   source  = "terraform-aws-modules/security-group/aws"
   version = "4.0.0"
@@ -59,13 +58,6 @@ module "security_group_asg" {
       description = "NFS"
       cidr_blocks = "0.0.0.0/0"
     },
-    # {
-    #   from_port   = 0
-    #   to_port     = 65535
-    #   protocol    = "tcp"
-    #   description = "ALB Port Open in ASG"
-    #   cidr_blocks = "0.0.0.0/0"
-    # },
     {
       from_port   = 8080
       to_port     = 8080
@@ -110,7 +102,6 @@ module "security_group_asg" {
 }
 
 module "security_group_rds" {
-  #source = "git@github.com:terraform-aws-modules/terraform-aws-security-group.git?ref=v4.0.0"
   source  = "terraform-aws-modules/security-group/aws"
   version = "4.0.0"
   name   = "security-group_rds"

@@ -44,7 +44,7 @@ module "alb" {
     Project = "terraform_drupal"
     Name    = "terraform_asg_cluster"
     BU      = "group-testing"
-    Owner   = "akshay.raj@tothenew.com"
+    Owner   = "rod.higgins@gmail.com"
     Purpose = "group project"
   }
 }
